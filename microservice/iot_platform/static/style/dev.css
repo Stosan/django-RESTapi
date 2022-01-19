@@ -1,0 +1,157 @@
+
+
+  .dev-info div {
+    border-right: 2px solid #eee;
+    padding-right: 25px;
+    padding-left: 25px;
+ 
+
+  }
+  .dev-info div:nth-last-child(1) {
+    border-right: none
+  }
+  .dev-info div:nth-of-type(1) {
+    padding-left: 1px;
+  }
+  /***************************/
+
+  .outer {
+    position: relative;
+    width: 250px;
+    left: 6%;
+    top: -5px;
+    height: 150px;
+  }
+  .bar-canv {
+    position: absolute;
+  }
+  .bar-canv2 {
+    position: absolute;
+  }
+  .percent {
+   position: absolute;z-index: 1;
+      left: 50%;
+      color: #fff;
+      font-weight: 900;
+      transform: translate(-50%, 0);
+      font-size: 2rem;
+      bottom: 0;
+  }
+ 
+
+  /***************************/
+  /** Function Definitions **/
+/** Basic Styles **/
+
+
+/** Speedometer Styles **/
+.speedometer > *{
+    font-size: 62.5%;
+}
+
+
+
+.speedometer-container::before {
+  content: "";
+  background-image: radial-gradient(circle at top left, #fff, transparent);
+  opacity: 0.12;
+}
+
+.speedometer .inner-ring {
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  top: calc(50% - 5.5rem);
+  left: calc(50% - 6rem);
+}
+.speedometer .inner-ring::before,
+.speedometer .inner-ring::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-radius: 50%;
+}
+.speedometer .inner-ring::before {
+  transform: rotate(-75deg);
+}
+.speedometer .inner-ring::after {
+  transform: rotate(-15deg);
+}
+.speedometer .outer-ring {
+  width: 62rem;
+  height: 19rem;
+  top: calc(50% - 19rem);
+  left: calc(50% - 29.5rem);
+  border-radius: 50%;
+}
+
+.speedometer .tick {
+  width: 0.2rem;
+  border-top: 2px solid #fff;
+  position: absolute;
+  top: calc(50% - 0.1rem);
+  left: calc(50% - 0.1rem);
+}
+.speedometer .tick:nth-child(6n+1) {
+  width: 1rem;
+  left: calc(50% - 0.8rem);
+  border-color: #fff;
+}
+.speedometer .digit {
+  width: 2rem;
+  height: 2rem; color: #fff;
+  position: absolute;
+  top: calc(50% - 0.4rem);
+  left: calc(50% - 1.3rem);
+  font-weight: bold;font-size: 0.7rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.speedometer .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 21rem;
+  height: 21rem;
+  position: absolute;
+  top: calc(50% - 9.5rem);
+  left: calc(50% - 10.5rem);
+}
+
+.speedometer .speed {
+  font-size: 3.3rem;
+  color: #fff;font-weight: bolder;
+}
+.speedometer .unit {
+  font-size: 1rem;top: -2rem;position: relative;
+}
+.speedometer .progress {
+  width: 21rem;
+  height: 21rem;
+  position: absolute;
+  top: calc(50% - 5.4rem);
+  left: calc(50% - 10.5rem);
+  border-radius: 50%;background: transparent;
+}
+.speedometer .progress::before {
+  content: "";
+  position: absolute;
+  top: -0.2rem;
+  left: calc(50% - 0.3rem);
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #f1252e;
+  box-shadow: 0 0 6rem 2rem rgba(241,37,46,0.35);
+}
+
+.speedometer .stat:not(:last-child) {
+  border-right: 2px solid rgba(255,255,255);
+}

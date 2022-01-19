@@ -1,0 +1,36 @@
+{% include 'includes/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+  <link rel="stylesheet" href="{% static 'style/login.css' %}">
+</head>
+<body>
+    <div class="bckimg"></div>
+<!-- partial:index.partial.html -->
+<div class="card" style="border-radius: 0.95rem;">
+  <div class="card__header">Login</div>
+  <form method="POST" onsubmit="event.preventDefault()" action="" class="form">
+
+    <div class="input-wrapper">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username">
+    </div>
+    <div class="input-wrapper">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <button type="submit" id="myBtn">Sign in</button>
+    <script>
+      document.getElementById("myBtn").addEventListener("click", myFunction);
+      function myFunction() {
+        window.location.href="/dashboard";
+      }
+     </script>
+  </form>
+  <div class="card__footer">
+    <p>Forgot Password? <a href="#">click here</a></p>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

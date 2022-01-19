@@ -1,0 +1,248 @@
+{% include 'includes/header.html' %}
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style/hm.css' %}">
+  <link rel="stylesheet" href="{% static 'style/dev.css' %}">
+  {% include 'includes/navbar.html' %}
+  
+  {% include 'includes/nav-control.html' %}
+
+        <div class="container-fluid py-4">
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="numbers"> 
+                        <h5 class="font-weight-bolder mb-0">
+                          26 ⁰C
+                        </h5>
+                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Temperature warning</p>
+                       
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                        <i class=" fas fa-exclamation-triangle ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="numbers">
+                        <h5 class="font-weight-bolder mb-0">
+                         56%
+                        </h5>
+                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Real-time battery level</p>
+                        
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                        <i class=" fas fa-battery-full ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row">
+                   
+                    <div class="col-8"> <a href="./alerts_edit.html">
+                      <div class="numbers">
+                        <h5 class="font-weight-bolder mb-0">
+                         Alerts
+                        </h5>
+                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Customize alerts</p>
+                        
+                      </div></a>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                        <i class=" fas fa-bell ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="numbers">
+                        <h5 class="font-weight-bolder mb-0">
+                          Delete Device
+                        </h5>
+                         <p class="text-sm mb-0 text-capitalize font-weight-bold"></p>
+                       
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                        <i class="fas fa-trash ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg mb-lg-0 mb-4">
+              <div class="card z-index-2">
+                <div class="card-body dev-info d-flex">
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Device ID</span></p>
+                  <h6 class="ms-2 mb-0"> {{object.id}}</h6>
+                 </div> 
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Device name</span></p>
+                  <h6 class="ms-2 mb-0">{{object.device}}</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">OEM</span></p>
+                  <h6 class="ms-2 mb-0"> Sigfox</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Solution Category</span></p>
+                  <h6 class="ms-2 mb-0">Detectors</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Status Code</span></p>
+                  <h6 class="ms-2 mb-0">240.00</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Communication</span></p>
+                  <h6 class="ms-2 mb-0"> Sigfox</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Last Response</span> (in 24hrs)</p>
+                  <h6 class="ms-2 mb-0"> {{object.time}}</h6>
+                 </div>
+                 <div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Device Summary</span></p>
+                  <h6 class="ms-2 mb-0"> Smoke detector device</h6>
+                 </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-lg-3 mb-lg-0 mb-4">
+              <div class="card z-index-2">
+                <div class="card-body p-3">
+                  <div class="bili bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+
+                    <div class="outer">
+                      <canvas class="bar-canv" id="chartJSContainer" width="400" height="240"></canvas>
+                       <canvas class="bar-canv2"  id="secondContainer" width="400" height="240"></canvas>
+                       <p class="percent">
+                        {{object.data}}⁰C
+                       </p>
+                      </div>
+
+                  </div>
+                  <h6 class="ms-2 mt-4 mb-0"> Temperature ⁰C</h6>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Real-time Reading</span></p>
+                 
+                </div>
+              </div>
+            </div>
+         
+            <div class="col-lg-4 mb-lg-0 mb-4">
+              <div class="card z-index-2">
+                <div class="card-body p-3"> 
+                <div class="speedometer bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                   
+                    <div class="inner-ring"></div>
+                    <div class="outer-ring"><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                    </div>
+                    <div class="digit-ring"><span class="digit">0</span><span class="digit">20</span><span class="digit">40</span><span class="digit">60</span><span class="digit">80</span><span class="digit">100</span><span class="digit">120</span><span class="digit">140</span><span class="digit">160</span>
+                    </div>
+                    <div class="details">
+                      <p class="label"></p>
+                      <p class="speed">{{object.key2}}</p>
+                      <p class="unit">Mbps</p>
+                    </div>
+                    <div class="progress"></div>
+                  
+                  </div>
+                  
+                   <h6 class="ms-2 mt-4 mb-0">Curr. Signal Strength</h6>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 mb-lg-0 mb-4">
+                <div class="card z-index-2">
+                  <div class="card-body p-3"> <h6 class="ms-2 mt-4 mb-0">Location</h6>
+                    <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                      <div class="chart">
+                        <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+          <div class="row mt-4">
+          
+            <div class="col-lg mb-lg-0 mb-4">
+              <div class="card z-index-2">
+                <div class="card-body p-3 ">
+                    <h6 class="ms-2 mt-4 mb-0">Temperature </h6>
+                 
+                  <div class="border-radius-lg py-3 pe-1 mb-3">
+                    <div class="chart">
+                      <canvas id="chart-line" class="chart-canvas" height="100"></canvas>
+                    </div>
+                  </div>
+                  <p class="text-sm ms-2"><span class="font-weight-bolder">Real-time Reading</span> (in 6hours)</p>
+
+                  
+                </div>
+              
+              </div>
+            </div>
+          </div>
+          <!--Chart 2-->
+          <div class="row mt-4">
+              <div class="col-lg">
+                <div class="card z-index-2">
+                  <div class="card-header pb-0">
+                    <h6>Monitoring</h6>
+                  
+                  </div>
+                  <div class="card-body p-3">
+                 
+                  </div>
+                </div>
+              </div>
+          </div>
+           
+          {% include 'includes/footer.html' %}
+
+    <script src="{% static 'js/plugins/chart-dev.js' %}"></script>
+          <script  src="{% static 'js/plugins/temp.js' %}"></script>
+          <script  src="{% static 'js/plugins/sped.js' %}"></script>
+</body>
+</html>
